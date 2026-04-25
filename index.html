@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Naya 🖤</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  overflow:hidden;
+  background:#000;
+}
+
+/* CONTAINER */
+.container{
+  width:100%;
+  height:100vh;
+  position:relative;
+}
+
+/* SLIDE (POSISI TENGAH) */
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center; /* INI YANG BIKIN TENGAH */
+  align-items:center;
+  padding:20px;
+  text-align:center;
+  opacity:0;
+  transition:1s;
+  z-index:2;
+}
+
+.slide.active{opacity:1;}
+
+/* FOTO HD ANTI BLUR */
+.slide img{
+  width:85%;
+  max-width:360px;
+  height:auto;
+  object-fit:contain;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(255,0,100,0.6);
+  margin-bottom:20px;
+}
+
+/* TEXT */
+.text{
+  color:#fff;
+  font-size:15px;
+  line-height:1.6;
+  background:rgba(255,255,255,0.08);
+  padding:15px;
+  border-radius:15px;
+  backdrop-filter:blur(6px);
+}
+
+/* NAV */
+.nav{
+  position:absolute;
+  bottom:20px;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:0 20px;
+  z-index:3;
+}
+
+button{
+  background:#ff2f75;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  color:white;
+}
+
+/* LOVE RAIN FULL */
+.heart{
+  position:absolute;
+  top:-10vh;
+  color:#ff4d88;
+  animation:fall linear infinite;
+  pointer-events:none;
+}
+
+@keyframes fall{
+  0%{transform:translateY(-10vh);}
+  100%{transform:translateY(110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LAYER 1 -->
+<div class="slide active">
+<img src="https://i.ibb.co/wNmY1ZNs/image.jpg">
+<div class="text">
+HI NAYA LAMA NIH GA CHATAN HEHE <br>
+AKU LIAT U MAKIN CANTIK AJA <br>
+TAPI SOMBONG BANGET NIHH UDA MACAM GAK KENAL W LAGI
+</div>
+</div>
+
+<!-- LAYER 2 -->
+<div class="slide">
+<img src="https://i.ibb.co/C52mY6gN/image.jpg">
+<div class="text">
+U APA KABARR NAYYY <br>
+TAU GA WA KANGEN KALI SAMA KABAR KABAR U <br>
+CHAT CHAT KITA YANG GAK PENTING" ITU WKWKKW <br>
+APA LAGI DAPAT PAP RANDOM NYA U <br>
+BEHHHHH &lt;3
+</div>
+</div>
+
+<!-- LAYER 3 -->
+<div class="slide">
+<img src="https://i.ibb.co/JF0c9DVG/image.jpg">
+<div class="text">
+NAY SEHAT KAN NAYY? KHAWATIR BANGET NIH SAMA NAY <br>
+SOALNYA GA ADA KABAR SAMA SEKALI TENTANG NAY WKWKWKKW <br>
+W Harap Nay Tetap sehat dan Bahagia yaaaaa
+</div>
+</div>
+
+<!-- LAYER 4 -->
+<div class="slide">
+<img src="https://i.ibb.co/W4d5X120/image.jpg">
+<div class="text">
+RINDUUU BANGET NAY , <br>
+GTW WA UD BERUSAHA BANGET NGELUPAIN U <br>
+TAPI SUSAH BANGETT WKKWKW :(
+</div>
+</div>
+
+<!-- LAYER 5 -->
+<div class="slide">
+<img src="https://i.ibb.co/CR1mzGN/image.jpg">
+<div class="text">
+NAYYYYY <br>
+W Sayang Ma u <br>
+Tapi W pingin banget berjuang untuk u <br>
+tapi kek w mkir kehadiran w ngeganggu u banget :)
+</div>
+</div>
+
+<!-- LAYER 6 -->
+<div class="slide">
+<img src="https://i.ibb.co/4nLFc702/image.jpg">
+<div class="text">
+Kadang Wa Selalu Berharap When ya Nay bisa Kasih W Kesempatan Sekali aja. <br>
+Cm Langsung Kek Ah apa w pantas ya untuk Nay :) <br>
+Sedangkan Masih Jadi Kawan aja uda Buat Nay Kecewa kemarin <br>
+Bingung w Nay :) <br>
+Kadang rasa sayang terlalu besar , tapi selalu ke balance kan sama rasa kurangnya diri w nay :)
+</div>
+</div>
+
+<!-- LAYER 7 -->
+<div class="slide">
+<img src="https://i.ibb.co/W4NmKTrV/image.jpg">
+<div class="text">
+But its okay nayy, <br>
+W Berharap nanti nay bisa Bahagia sama pasangan nay yaaa <br>
+dan pasangan nay bisa lebih Sayang dan menghargai nay yaaa <br><br>
+See Youu Nay" <br>
+Hehe <br>
+sayang kamoeee
+</div>
+</div>
+
+<div class="nav">
+<button onclick="prev()">Prev</button>
+<button onclick="next()">Next</button>
+</div>
+
+</div>
+
+<script>
+let slides=document.querySelectorAll('.slide');
+let index=0;
+
+function showSlide(i){
+slides.forEach(s=>s.classList.remove('active'));
+slides[i].classList.add('active');
+}
+
+function next(){index=(index+1)%slides.length;showSlide(index);}
+function prev(){index=(index-1+slides.length)%slides.length;showSlide(index);}
+
+setInterval(next,5000);
+
+/* LOVE RAIN FULL */
+function createHeart(){
+let heart=document.createElement('div');
+heart.className='heart';
+heart.innerHTML='❤';
+heart.style.left=Math.random()*100+'vw';
+heart.style.fontSize=(10+Math.random()*25)+'px';
+heart.style.animationDuration=(2+Math.random()*3)+'s';
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),5000);
+}
+
+setInterval(createHeart,80);
+</script>
+
+</body>
+</html>
