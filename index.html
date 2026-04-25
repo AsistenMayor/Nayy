@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Untuk Naya</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body { 
+            background-color: #000; 
+            overflow: hidden; 
+            color: white; 
+            height: 100vh;
+        }
+
+        /* Tombol Start / Overlay Awal */
+        #start-btn {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, #ff4d6d, #800e13);
+            z-index: 9999; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; cursor: pointer;
+            text-align: center;
+        }
+        #start-btn h1 { font-size: 1.5rem; margin-bottom: 15px; text-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
+        #start-btn .icon { font-size: 50px; margin-bottom: 10px; animation: pulse 1.5s infinite; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Efek Hujan Love */
+        #heart-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 100;
+        }
+        .heart {
+            position: absolute; color: #ff4d6d; font-size: 20px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* Kontainer Slide */
+        .swiper { width: 100%; height: 100vh; }
+        .swiper-slide {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            background-size: cover; background-position: center;
+        }
+
+        /* Overlay gelap agar teks terbaca jelas */
+        .overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.55); z-index: 1;
+        }
+
+        .content {
+            position: relative; z-index: 2; width: 85%; max-width: 350px;
+            text-align: center; animation: fadeInUp 1s ease;
+        }
+
+        /* Frame Foto Jernih */
+        .photo-frame {
+            width: 100%; aspect-ratio: 3/4; margin-bottom: 20px;
+            border: 6px solid white; border-radius: 12px;
+            overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+        .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Kotak Teks */
+        .text-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px); padding: 15px;
+            border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95rem; line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="start-btn" onclick="startApp()">
+        <div class="icon">❤️</div>
+        <h1>KLIK UNTUK MEMULAI</h1>
+        <p>Ada pesan buat Naya...</p>
+    </div>
+
+    <div id="heart-container"></div>
+
+    <audio id="myAudio" loop>
+        <source src="riskitall.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/wNmY1ZNs/image.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="photo-frame"><img src="https://i.ibb.co/wNmY1ZNs/image.jpg"></div>
+                    <div class="text-box">HI NAYA LAMA NIH GA CHATAN HEHE<br>AKU LIAT U MAKIN CANTIK AJA<br>TAPI SOMBONG BANGET NIHH UDA MACAM GAK KENAL W LAGI</div>
+                </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/C52mY6gN/image.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="photo-frame"><img src="https://i.ibb.co/C52mY6gN/image.jpg"></div>
+                    <div class="text-box">U APA KABARR NAYYY<br>TAU GA WA KANGEN KALI SAMA KABAR KABAR U<br>CHAT CHAT KITA YANG GAK PENTING" ITU WKWKKW<br>APA LAGI DAPAT PAP RANDOM NYA U BEHHHHH <3</div>
+                </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/JF0c9DVG/image.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="photo-frame"><img src="https://i.ibb.co/JF0c9DVG/image.jpg"></div>
+                    <div class="text-box">NAY SEHAT KAN NAYY? KHAWATIR BANGET NIH SAMA NAY<br>SOALNYA GA ADA KABAR SAMA SEKALI TENTANG NAY WKWKWKKW<br>W Harap Nay Tetap sehat dan Bahagia yaaaaa</div>
+                </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/W4d5X120/image.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="photo-frame"><img src="https://i.ibb.co/W4d5X120/image.jpg"></div>
+                    <div class="text-box">RINDUUU BANGET NAY ,<br>GTW WA UD BERUSAHA BANGET NGELUPAIN U<br>TAPI SUSAH BANGETT WKKWKW :(</div>
+                </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/CR1mzGN/image.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="photo-frame"><img src="https://i.ibb.co/CR1mzGN/image.jpg"></div>
+                    <div class="text-box">NAYYYYY<br>W Sayang Ma u<br>Tapi W pingin banget berjuang untuk u<br>tapi kek w mkir kehadiran w ngeganggu u banget :)</div>
+                </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/4nLFc702/image.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="photo-frame"><img src="https://i.ibb.co/4nLFc702/image.jpg"></div>
+                    <div class="text-box">Kadang Wa Selalu Berharap When ya Nay bisa Kasih W Kesempatan Sekali aja.<br>Sedangkan Masih Jadi Kawan aja uda Buat Nay Kecewa kemarin.</div>
+                </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image: url('https://i.ibb.co/W4NmKTrV/image.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="photo-frame"><img src="https://i.ibb.co/W4NmKTrV/image.jpg"></div>
+                    <div class="text-box">But its okay nayy,<br>W Berharap nanti nay bisa Bahagia sama pasangan nay yaaa<br>See Youu Nay" ❤️</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        function startApp() {
+            // Sembunyikan overlay
+            document.getElementById('start-btn').style.display = 'none';
+            
+            // Putar Musik
+            const audio = document.getElementById('myAudio');
+            audio.play().catch(e => console.log("Audio play blocked: ", e));
+            
+            // Jalankan Slider Otomatis
+            const swiper = new Swiper(".mySwiper", {
+                loop: true,
+                effect: "fade",
+                speed: 2000,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+            });
+
+            // Jalankan Hujan Hati
+            createHearts();
+        }
+
+        function createHearts() {
+            const container = document.getElementById('heart-container');
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                heart.style.opacity = Math.random();
+                heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+                container.appendChild(heart);
+                setTimeout(() => { heart.remove(); }, 5000);
+            }, 300);
+        }
+    </script>
+</body>
+</html>
