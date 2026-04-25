@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Naya ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* LOVE RAIN */
+.love {
+    position: fixed;
+    top: -10px;
+    color: red;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+/* LAYER */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.section img {
+    width: 90%;
+    max-width: 350px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* TEXT */
+.text {
+    max-width: 90%;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+function createLove() {
+    const love = document.createElement("div");
+    love.classList.add("love");
+    love.innerHTML = "❤️";
+    love.style.left = Math.random() * 100 + "vw";
+    love.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    love.style.fontSize = (Math.random() * 20 + 10) + "px";
+    document.body.appendChild(love);
+
+    setTimeout(() => {
+        love.remove();
+    }, 5000);
+}
+setInterval(createLove, 200);
+</script>
+
+<!-- LAYER 1 -->
+<div class="section">
+    <img src="https://i.ibb.co/wNmY1ZNs/IMG.jpg">
+    <div class="text">
+        HI NAYA LAMA NIH GA CHATAN HEHE AKU LIAT U MAKIN CANTIK AJA TAPI SOMBONG BANGET NIHH UDA MACAM GAK KENAL W LAGI
+    </div>
+</div>
+
+<!-- LAYER 2 -->
+<div class="section">
+    <img src="https://i.ibb.co/C52mY6gN/IMG.jpg">
+    <div class="text">
+        U APA KABARR NAYYY TAU GA WA KANGEN KALI SAMA KABAR KABAR U CHAT CHAT KITA YANG GAK PENTING" ITU WKWKKW APA LAGI DAPAT PAP RANDOM NYA U BEHHHHH &lt;3
+    </div>
+</div>
+
+<!-- LAYER 3 -->
+<div class="section">
+    <img src="https://i.ibb.co/JF0c9DVG/IMG.jpg">
+    <div class="text">
+        NAY SEHAT KAN NAYY? KHAWATIR BANGET NIH SAMA NAY SOALNYA GA ADA KABAR SAMA SEKALI TENTANG NAY WKWKWKKW W Harap Nay Tetap sehat dan Bahagia yaaaaa
+    </div>
+</div>
+
+<!-- LAYER 4 -->
+<div class="section">
+    <img src="https://i.ibb.co/W4d5X120/IMG.jpg">
+    <div class="text">
+        RINDUUU BANGET NAY , GTW WA UD BERUSAHA BANGET NGELUPAIN U TAPI SUSAH BANGETT WKKWKW :(
+    </div>
+</div>
+
+<!-- LAYER 5 -->
+<div class="section">
+    <img src="https://i.ibb.co/CR1mzGN/IMG.jpg">
+    <div class="text">
+        NAYYYYY W Sayang Ma u Tapi W pingin banget berjuang untuk u tapi kek w mkir kehadiran w ngeganggu u banget :)
+    </div>
+</div>
+
+<!-- LAYER 6 -->
+<div class="section">
+    <img src="https://i.ibb.co/4nLFc702/IMG.jpg">
+    <div class="text">
+        Kadang Wa Selalu Berharap When ya Nay bisa Kasih W Kesempatan Sekali aja. Cm Langsung Kek Ah apa w pantas ya untuk Nay :) Sedangkan Masih Jadi Kawan aja uda Buat Nay Kecewa kemarin Bingung w Nay :) Kadang rasa sayang terlalu besar , tapi selalu ke balance kan sama rasa kurangnya diri w nay :)
+    </div>
+</div>
+
+<!-- LAYER 7 -->
+<div class="section">
+    <img src="https://i.ibb.co/W4NmKTrV/IMG.jpg">
+    <div class="text">
+        But its okay nayy, W Berharap nanti nay bisa Bahagia sama pasangan nay yaaa dan pasangan nay bisa lebih Sayang dan menghargai nay yaaa See Youu Nay" Hehe sayang kamoeee
+    </div>
+</div>
+
+</body>
+</html>
