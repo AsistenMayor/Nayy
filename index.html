@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Naya ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Quicksand', sans-serif;
+            background: #000;
+            color: white;
+        }
+
+        /* Cinematic Background */
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(40,0,20,1) 0%, rgba(0,0,0,1) 100%);
+            z-index: -1;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 4px;
+            z-index: 100;
+            display: flex;
+        }
+        .progress-bar {
+            height: 100%;
+            background: pink;
+            width: 0%;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 10px pink;
+        }
+
+        /* Slider Logic */
+        .slider {
+            display: flex;
+            width: 700%; /* Sesuai jumlah slide */
+            height: 100vh;
+            transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Cinematic Image (Ken Burns Effect) */
+        .img-container {
+            width: 85%;
+            max-width: 380px;
+            height: 450px;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 192, 203, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+            transition: transform 6s linear;
+        }
+
+        .active img {
+            transform: scale(1);
+        }
+
+        /* Glassmorphism Text */
+        .text-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            max-width: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease 0.5s;
+        }
+
+        .active .text-box {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-box h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Hearts */
+        .heart {
+            position: fixed;
+            top: -10px;
+            color: pink;
+            pointer-events: none;
+            animation: fall linear infinite;
+            z-index: 5;
+            opacity: 0.6;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* Start Overlay */
+        #overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .btn-start {
+            padding: 15px 30px;
+            border: 2px solid pink;
+            color: pink;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            background: transparent;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+<div id="overlay" onclick="startStory()">
+    <button class="btn-start">Klik untuk Naya ❤️</button>
+</div>
+
+<div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="bg-overlay"></div>
+
+<audio id="myAudio" loop>
+  <source src="https://files.catbox.moe/6nqf7p.mp3" type="audio/mpeg">
+</audio>
+
+<div class="slider" id="slider">
+    <div class="slide active">
+        <div class="img-container"><img src="https://i.ibb.co/wNmY1ZNs/image.jpg"></div>
+        <div class="text-box">
+            <h2>HI NAYA, LAMA NIH GA CHATAN...<br>AKU LIHAT KAMU MAKIN CANTIK AJA.<br>TAPI SOMBONG BANGET SEKARANG HEHE.</h2>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="img-container"><img src="https://i.ibb.co/C52mY6gN/image.jpg"></div>
+        <div class="text-box">
+            <h2>APA KABAR, NAY?<br>TAU GAK, AKU KANGEN BANGET SAMA KABAR KAMU... CHAT GA JELAS KITA DULU, DAN PAP RANDOM KAMU.</h2>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="img-container"><img src="https://i.ibb.co/JF0c9DVG/image.jpg"></div>
+        <div class="text-box">
+            <h2>NAY SEHAT KAN?<br>JUJUR KHAWATIR KARENA KAMU GA ADA KABAR. AKU BERHARAP NAY TETAP SEHAT DAN BAHAGIA YA.</h2>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="img-container"><img src="https://i.ibb.co/W4d5X120/image.jpg"></div>
+        <div class="text-box">
+            <h2>RINDU BANGET NAY...<br>UDAH BERUSAHA BANGET BUAT LUPAIN KAMU, TAPI TERNYATA SUSAH BANGET :(</h2>
+        </div>
+    </div>
+
+    <div
